@@ -22,6 +22,10 @@ func (k *KafkaConsumer) Consume() {
 	configMap := &ckafka.ConfigMap{
 		"bootstrap.servers": os.Getenv("KAFKA_BOOTSTRAP_SERVERS"),
 		"group.id":          os.Getenv("KAFKA_CONSUMER_GROUP_ID"),
+		"security.protocol": os.Getenv("security.protocol"),
+		"sasl.mechanisms":   os.Getenv("sasl.mechanisms"),
+		"sasl.username":     os.Getenv("sasl.username"),
+		"sasl.password":     os.Getenv("sasl.password"),
 	}
 	c, err := ckafka.NewConsumer(configMap)
 	if err != nil {

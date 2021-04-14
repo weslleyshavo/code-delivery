@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simulator-conf
+data:
+  env: |
+    KAFKA_READ_TOPIC=route.new-direction
+    KAFKA_PRODUCE_TOPIC=route.new-position
+    KAFKA_BOOTSTRAP_SERVERS=pkc-lzvrd.us-west4.gcp.confluent.cloud:9092
+    KAFKA_CONSUMER_GROUP_ID=simulator
+    security.protocol=SASL_SSL
+    sasl.mechanisms=PLAIN
+    sasl.username=XMZCS43EK7NTHM23
+    sasl.password=Ks2iyolnxk6ERGKpGzaCloc5WuJiLAPd56ryGMLJNWV1s+0GpG8T9aCCytsQcUF0
